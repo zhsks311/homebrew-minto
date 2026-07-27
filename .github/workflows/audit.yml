@@ -1,0 +1,34 @@
+name: Audit Cask
+
+on:
+  pull_request:
+    paths:
+      - 'Casks/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.pull_request.head.repo.full_name == github.repository &&
+       startsWith(github.event.pull_request.head.ref, 'release/minto-'))
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Audit Minto Cask
+        run: |
+          if [ ! -f Casks/minto.rb ]; then
+            echo "Casks/minto.rb가 아직 없습니다."
+            exit 0
+          fi
+
+          tap_dir="$(brew --repository)/Library/Taps/zhsks311/homebrew-minto"
+          mkdir -p "$(dirname "$tap_dir")"
+          ln -s "$GITHUB_WORKSPACE" "$tap_dir"
+          brew audit --cask --tap zhsks311/minto minto
