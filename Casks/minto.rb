@@ -7,7 +7,7 @@ cask "minto" do
   desc "Mac에서 회의를 기록하고 전사하는 로컬 우선 앱"
   homepage "https://zhsks311.github.io/minto/"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
   depends_on arch: :arm64
 
   app "Minto.app"
