@@ -14,7 +14,8 @@ cask "minto" do
 
   caveats <<~EOS
     Minto는 Apple 공증을 받지 않은 preview 앱입니다.
-    최초 실행이 차단되면 Finder의 응용 프로그램에서 Minto를
-    우클릭한 후 '열기'를 선택하세요.
+    최초 실행이 차단되면 Minto를 한 번 실행한 뒤
+    시스템 설정 > 개인정보 보호 및 보안에서
+    '확인 없이 열기'를 선택하세요.
   EOS
 end
