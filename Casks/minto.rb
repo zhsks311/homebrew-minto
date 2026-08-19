@@ -1,6 +1,6 @@
 cask "minto" do
-  version "0.0.2"
-  sha256 "94ee824626430d569a7ba6c1a82de460ccd542e0e1c81905cf1e87b6e6604949"
+  version "0.0.3"
+  sha256 "a491aa7155352238e83f80e278272e72a585e2d5643186f80dd1f75ad8961213"
 
   url "https://github.com/zhsks311/minto/releases/download/v#{version}/Minto.zip"
   name "Minto"
