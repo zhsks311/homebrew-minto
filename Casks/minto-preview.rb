@@ -1,6 +1,6 @@
 cask "minto-preview" do
-  version "0.0.9-preview.2"
-  sha256 "01691f12792569f63d9621b619c0b5727e969ee83001c01f4f50eb299b150fb1"
+  version "0.0.10-preview.1"
+  sha256 "6bdf63487ae1aae80c161d3785ffbcf0963da5241d1cd141afbde875243bdf4f"
 
   url "https://github.com/zhsks311/minto/releases/download/v#{version}/Minto.zip"
   name "Minto"
